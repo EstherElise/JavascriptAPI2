@@ -1,0 +1,32 @@
+{
+  "name": "javascriptapi2",
+  "version": "1.0.0",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EstherElise/JavascriptAPI2.git"
+  },
+  "author": "Esther-Elise Gisholt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EstherElise/JavascriptAPI2/issues"
+  },
+  "homepage": "https://github.com/EstherElise/JavascriptAPI2#readme",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}
