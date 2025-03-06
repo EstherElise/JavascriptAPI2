@@ -18,7 +18,7 @@ const btnStartFight = document.getElementById("start-fight");
 //Henter kampområdet
 const battleArena = document.getElementById("battle-area");
 
-//Funksjon som gjør at bildet man trykker på blir valgt
+//Funksjon som gjør at bildet man trykker på blir valgt (henter alt. tekst)
 heroImage.forEach(function (heroImage) {
   heroImage.addEventListener("click", function () {
   selectedHero = heroImage.attributes.alt.value
@@ -41,11 +41,11 @@ function createChar() {
 function displayHero() {
   //Fjerner helt om det allerede ligger en der
   document.getElementById("character-display")?.remove();
-  //Henter helt fra localStorage
+  //Henter verdiene til helten fra localStorage
   const getHero = localStorage.getItem("Helt");
   const hero = JSON.parse(getHero);
   
-  //Mapping av alt tekst til bildefil
+  //Mapping av alt. tekst til bildefil
   const heroImageMap = {
     "Bilde 1": "./assets/death-knight.jpg",
     "Bilde 2": "./assets/hunter.jpg",
@@ -115,8 +115,10 @@ function generateEnemy() {
 function displayEnemy() {
   //Fjerner fiende dersom det allerede ligger en der
   document.getElementById("enemy-fight-display")?.remove();
+  //Henter fiende fra localStorage
   const getEnemy = localStorage.getItem("Fiende");
   const chosenEnemy = JSON.parse(getEnemy);
+
   const divEnemy = document.createElement("div");
   divEnemy.setAttribute("id", "enemy-fight-display");
   divEnemy.className = "profile-card";
@@ -153,7 +155,7 @@ btnGenerateEnemy.addEventListener("click", (e) => {
   generateEnemy(e)
 });
 
-//Knapp: sammenligner HP
+//Knapp: sammenligner HP og legger ut resultat
 btnStartFight.addEventListener("click", function () {
   const result = document.getElementById("battle-result");
   const hero = JSON.parse(localStorage.getItem("Helt"));
