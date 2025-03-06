@@ -1,38 +1,44 @@
-const { add, fight } = require("../app");
-
-test("fff", () => {
-  expect(add(5, 10)).toBe(15);
-});
+import { fight } from "../function";
 
 describe("Battle outcome", () => {
   test("Helten vinner", () => {
-    
-  })
+    const hero = {
+      HP: 180,
+      Angrepsstyrke: 60
+    }
+    const enemy = {
+      HP: 80,
+      Angrepsstyrke: 20
+    }
+
+    expect(fight(hero, enemy)).toBe("Du vant!");
+  });
 
   test("Fienden vinner", () => {
-    
-  })
+    const hero = {
+      HP: 80,
+      Angrepsstyrke: 60
+    }
+    const enemy = {
+      HP: 180,
+      Angrepsstyrke: 20
+    }
+
+    expect(fight(hero, enemy)).toBe("Du tapte");
+  });
 
   test("Uavgjort", () => {
+    const hero = {
+      HP: 100,
+      Angrepsstyrke: 60
+    }
+    const enemy = {
+      HP: 100,
+      Angrepsstyrke: 60
+    }
+
+    expect(fight(hero, enemy)).toBe("Uavgjort");
     
-  })
+  });
 
-})
-
-// test("Hero wins", () => {
-//   localStorage.setItem("Helt", JSON.stringify({ name: "Hero", HP: 120 }));
-//   localStorage.setItem("Fiende", JSON.stringify({ name: "Enemy", HP: 100 }));
-//   expect(fight(hero1.Hp > chosenEnemy1.Hp)).toBe(results[0]);
-// });
-
-// test("Enemy wins", () => {
-//   localStorage.setItem("Helt", JSON.stringify({ name: "Hero", HP: 90 }));
-//   localStorage.setItem("Fiende", JSON.stringify({ name: "Enemy", HP: 110 }));
-//   expect(fight()).toBe(results[1]);
-// });
-
-// test("Tie", () => {
-//   localStorage.setItem("Helt", JSON.stringify({ name: "Hero", HP: 100 }));
-//   localStorage.setItem("Fiende", JSON.stringify({ name: "Enemy", HP: 100 }));
-//   expect(fight()).toBe(results[3]);
-// });
+});
