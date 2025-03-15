@@ -1,6 +1,6 @@
 import { fight } from "./function.js";
 
-//Henter verdier fra inputfelt
+//Henter inputfelt
 const heroNameInput = document.getElementById("character-name");
 const heroHpInput = document.getElementById("character-hp");
 const heroAdInput = document.getElementById("attack-damage");
